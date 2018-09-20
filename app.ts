@@ -1,3 +1,4 @@
+/*
 function getNombre(){
     return "Carlos";
 }
@@ -19,7 +20,7 @@ let mensaje:string = "hola";
      nombre: "Peter",
      edad: 20
     }
- 
+
 let nombre:string = "Carlos";
 let apellido:string = "Garcia";
 let edad:number = 46;
@@ -40,7 +41,7 @@ function activar(quien:string,
     }else{
         mensaje = `${quien} activo la ${objeto}`;
     }
-    
+
     // console.log(mensaje);
 }
 // activar("Godon", "La batiseñal", "tarde");
@@ -62,5 +63,20 @@ let hulk = {
         }, 1500)
     }
 }
+*/
 
+// Destructuracion de Objetos
+let avenger = {
+  nombre: 'Steve',
+  clave: 'Capitan America',
+  poder: 'Droga'
+}
 
+let {nombre, clave, poder} = avenger;
+//console.log(nombre, clave, poder);
+
+// Destructuracion de Arreglos
+let avengers:string[] = ["Tor", "Steve", "Tony"];
+
+let [tor, capi, ironman] = avengers;
+console.log(tor, capi, ironman);

@@ -1,48 +1,78 @@
-function getNombre() {
+/*
+function getNombre(){
     return "Carlos";
 }
-var mensaje = "hola";
-var numero = 123;
-var booleano = true;
-var hoy = new Date();
-var cualquiera;
-cualquiera = 23;
-cualquiera = "Carlos";
-var spiderman = {
-    nombre: "Peter",
-    edad: 20
-};
-var nombre = "Carlos";
-var apellido = "Garcia";
-var edad = 46;
-var texto = "Hola, " + nombre + " " + apellido + " (" + edad + ")";
-var texto2 = "" + getNombre();
+
+
+let mensaje:string = "hola";
+
+ let numero:number = 123;
+
+ let booleano:boolean = true;
+
+ let hoy:Date = new Date();
+
+ let cualquiera:any;
+ cualquiera = 23
+ cualquiera = "Carlos"
+
+ let spiderman = {
+     nombre: "Peter",
+     edad: 20
+    }
+
+let nombre:string = "Carlos";
+let apellido:string = "Garcia";
+let edad:number = 46;
+
+let texto = `Hola, ${nombre} ${apellido} (${edad})`;
+
+let texto2:string = `${ getNombre() }`
+
 // console.log(texto)
 // console.log(texto2)
-function activar(quien, objeto, momento) {
-    if (objeto === void 0) { objeto = "batisseñal"; }
-    var mensaje;
-    if (momento) {
-        mensaje = quien + " activo la " + objeto + " en la " + momento;
+
+function activar(quien:string,
+    objeto:string = "batisseñal", momento?:string){
+    let mensaje:string;
+
+    if(momento){
+        mensaje = `${quien} activo la ${objeto} en la ${momento}`;
+    }else{
+        mensaje = `${quien} activo la ${objeto}`;
     }
-    else {
-        mensaje = quien + " activo la " + objeto;
-    }
+
     // console.log(mensaje);
 }
 // activar("Godon", "La batiseñal", "tarde");
-var funcionF = function (nombre) { return nombre; };
-var miFuncion3 = function (nombre) {
+
+let funcionF = (nombre:string) => nombre;
+
+let miFuncion3 = (nombre:string) =>{
     nombre = nombre.toUpperCase();
     return nombre;
-};
+}
 // console.log(miFuncion3("Pedro"))
-var hulk = {
+
+
+let hulk = {
     mombre: "Hulk",
-    smash: function () {
-        var _this = this;
-        setTimeout(function () {
-            console.log(_this.nombre + ", smash!!");
-        }, 1500);
+    smash(){
+        setTimeout( () =>{
+            console.log(`${this.nombre}, smash!!`)
+        }, 1500)
     }
+}
+*/
+// Destructuracion de Objetos
+var avenger = {
+    nombre: 'Steve',
+    clave: 'Capitan America',
+    poder: 'Droga'
 };
+var nombre = avenger.nombre, clave = avenger.clave, poder = avenger.poder;
+//console.log(nombre, clave, poder);
+// Destructuracion de Arreglos
+var avengers = ["Tor", "Steve", "Tony"];
+var tor = avengers[0], capi = avengers[1], ironman = avengers[2];
+console.log(tor, capi, ironman);
