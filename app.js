@@ -1,4 +1,5 @@
 /*
+
 function getNombre(){
     return "Carlos";
 }
@@ -46,6 +47,7 @@ function activar(quien:string,
 }
 // activar("Godon", "La batiseñal", "tarde");
 
+// Funcion de Flecha
 let funcionF = (nombre:string) => nombre;
 
 let miFuncion3 = (nombre:string) =>{
@@ -63,16 +65,75 @@ let hulk = {
         }, 1500)
     }
 }
-*/
-function enviarMision(xmen) {
-    console.log("Enviando a mision a:  " + xmen.nombre);
+
+
+// Destructuracion de Objetos
+let avenger = {
+  nombre: 'Steve',
+  clave: 'Capitan America',
+  poder: 'Droga'
 }
-function enviarCuartel(xmen) {
-    console.log("Enviando al cuartel:  " + xmen.nombre);
+
+let {nombre, clave, poder} = avenger;
+//console.log(nombre, clave, poder);
+
+// Destructuracion de Arreglos
+let avengers:string[] = ["Tor", "Steve", "Tony"];
+
+let [tor, capi, ironman] = avengers;
+console.log(tor, capi, ironman);
+
+
+
+//Promesas typescript
+
+let prom1 = new Promise( function(resolve, reject) {
+    setTimeout( ()=>{
+      console.log("Promesa terminada");
+
+      //Si todo sale bien
+      resolve();
+
+      //Si todo sale mal
+      //reject();
+    }, 1500)
+})
+
+//La promesa recibe 2 parametros que son:
+//La funcion que declare primero
+//que en este caso es resolve y luego la
+//segunda funcion que es reject.Ej:
+//prom1.then( funtion(){}, function(){})
+
+prom1.then( function() {
+  console.log("Ejecutarme cuando todo se termine");
+},
+  function(){
+      console.error("Ejecutar si todo sale mal");
+  }
+)
+
+
+//Interfaces typescript
+
+interface Xmen {
+    nombre: string,
+    poder: string,
 }
-var wolverine = {
-    nombre: "wolverine",
-    poder: "Regeneracion"
+
+function enviarMision(xmen:Xmen) {
+    console.log(`Enviando a mision a:  ${xmen.nombre}`);
+}
+
+function enviarCuartel(xmen:Xmen) {
+    console.log(`Enviando al cuartel:  ${xmen.nombre}`);
+}
+
+let wolverine:Xmen = {
+  nombre: "wolverine",
+  poder: "Regeneracion"
 };
+
 enviarMision(wolverine);
 enviarCuartel(wolverine);
+*/ 

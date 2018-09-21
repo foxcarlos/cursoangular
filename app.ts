@@ -1,4 +1,5 @@
 /*
+
 function getNombre(){
     return "Carlos";
 }
@@ -46,6 +47,7 @@ function activar(quien:string,
 }
 // activar("Godon", "La batiseñal", "tarde");
 
+// Funcion de Flecha
 let funcionF = (nombre:string) => nombre;
 
 let miFuncion3 = (nombre:string) =>{
@@ -63,10 +65,10 @@ let hulk = {
         }, 1500)
     }
 }
-*/
+
 
 // Destructuracion de Objetos
-/*let avenger = {
+let avenger = {
   nombre: 'Steve',
   clave: 'Capitan America',
   poder: 'Droga'
@@ -80,9 +82,9 @@ let avengers:string[] = ["Tor", "Steve", "Tony"];
 
 let [tor, capi, ironman] = avengers;
 console.log(tor, capi, ironman);
-*/
 
-/*
+
+
 //Promesas typescript
 
 let prom1 = new Promise( function(resolve, reject) {
@@ -110,7 +112,8 @@ prom1.then( function() {
       console.error("Ejecutar si todo sale mal");
   }
 )
-*/
+
+
 //Interfaces typescript
 
 interface Xmen {
@@ -133,3 +136,4 @@ let wolverine:Xmen = {
 
 enviarMision(wolverine);
 enviarCuartel(wolverine);
+*/
