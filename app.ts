@@ -82,6 +82,7 @@ let [tor, capi, ironman] = avengers;
 console.log(tor, capi, ironman);
 */
 
+/*
 //Promesas typescript
 
 let prom1 = new Promise( function(resolve, reject) {
@@ -96,12 +97,12 @@ let prom1 = new Promise( function(resolve, reject) {
     }, 1500)
 })
 
-/* La promesa recibe 2 parametros que son:
-La funcion que declare primero
-que en este caso es resolve y luego la
-segunda funcion que es reject.Ej:
-prom1.then( funtion(){}, function(){})
-*/
+//La promesa recibe 2 parametros que son:
+//La funcion que declare primero
+//que en este caso es resolve y luego la
+//segunda funcion que es reject.Ej:
+//prom1.then( funtion(){}, function(){})
+
 prom1.then( function() {
   console.log("Ejecutarme cuando todo se termine");
 },
@@ -109,3 +110,26 @@ prom1.then( function() {
       console.error("Ejecutar si todo sale mal");
   }
 )
+*/
+//Interfaces typescript
+
+interface Xmen {
+    nombre: string,
+    poder: string,
+}
+
+function enviarMision(xmen:Xmen) {
+    console.log(`Enviando a mision a:  ${xmen.nombre}`);
+}
+
+function enviarCuartel(xmen:Xmen) {
+    console.log(`Enviando al cuartel:  ${xmen.nombre}`);
+}
+
+let wolverine:Xmen = {
+  nombre: "wolverine",
+  poder: "Regeneracion"
+};
+
+enviarMision(wolverine);
+enviarCuartel(wolverine);
