@@ -65,14 +65,39 @@ let hulk = {
 }
 */
 // Destructuracion de Objetos
-var avenger = {
-    nombre: 'Steve',
-    clave: 'Capitan America',
-    poder: 'Droga'
-};
-var nombre = avenger.nombre, clave = avenger.clave, poder = avenger.poder;
+/*let avenger = {
+  nombre: 'Steve',
+  clave: 'Capitan America',
+  poder: 'Droga'
+}
+
+let {nombre, clave, poder} = avenger;
 //console.log(nombre, clave, poder);
+
 // Destructuracion de Arreglos
-var avengers = ["Tor", "Steve", "Tony"];
-var tor = avengers[0], capi = avengers[1], ironman = avengers[2];
+let avengers:string[] = ["Tor", "Steve", "Tony"];
+
+let [tor, capi, ironman] = avengers;
 console.log(tor, capi, ironman);
+*/
+//Promesas typescript
+var prom1 = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("Promesa terminada");
+        //Si todo sale bien
+        resolve();
+        //Si todo sale mal
+        //reject();
+    }, 1500);
+});
+/* La promesa recibe 2 parametros que son:
+La funcion que declare primero
+que en este caso es resolve y luego la
+segunda funcion que es reject.Ej:
+prom1.then( funtion(){}, function(){})
+*/
+prom1.then(function () {
+    console.log("Ejecutarme cuando todo se termine");
+}, function () {
+    console.error("Ejecutar si todo sale mal");
+});
