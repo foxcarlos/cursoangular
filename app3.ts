@@ -35,3 +35,9 @@ class Avenger {
 
 let antman:Avenger = new Avenger( "AntMan", "CapitanA",  "Scot Land");
 console.log(antman);
+
+class Villano{
+    constructor( public nombre:string){
+        
+    }
+}
