@@ -24,3 +24,9 @@ var Avenger = /** @class */ (function () {
 }());
 var antman = new Avenger("AntMan", "CapitanA", "Scot Land");
 console.log(antman);
+var Villano = /** @class */ (function () {
+    function Villano(nombre) {
+        this.nombre = nombre;
+    }
+    return Villano;
+}());
