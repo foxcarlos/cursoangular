@@ -1,139 +1,57 @@
-/*
-
-function getNombre(){
-    return "Carlos";
-}
-
-
-let mensaje:string = "hola";
-
- let numero:number = 123;
-
- let booleano:boolean = true;
-
- let hoy:Date = new Date();
-
- let cualquiera:any;
- cualquiera = 23
- cualquiera = "Carlos"
-
- let spiderman = {
-     nombre: "Peter",
-     edad: 20
-    }
-
-let nombre:string = "Carlos";
-let apellido:string = "Garcia";
-let edad:number = 46;
-
-let texto = `Hola, ${nombre} ${apellido} (${edad})`;
-
-let texto2:string = `${ getNombre() }`
-
-// console.log(texto)
-// console.log(texto2)
-
-function activar(quien:string,
-    objeto:string = "batisseñal", momento?:string){
-    let mensaje:string;
-
-    if(momento){
-        mensaje = `${quien} activo la ${objeto} en la ${momento}`;
-    }else{
-        mensaje = `${quien} activo la ${objeto}`;
-    }
-
-    // console.log(mensaje);
-}
-// activar("Godon", "La batiseñal", "tarde");
-
-// Funcion de Flecha
-let funcionF = (nombre:string) => nombre;
-
-let miFuncion3 = (nombre:string) =>{
-    nombre = nombre.toUpperCase();
-    return nombre;
-}
-// console.log(miFuncion3("Pedro"))
-
-
-let hulk = {
-    mombre: "Hulk",
-    smash(){
-        setTimeout( () =>{
-            console.log(`${this.nombre}, smash!!`)
-        }, 1500)
-    }
-}
-
-
-// Destructuracion de Objetos
-let avenger = {
-  nombre: 'Steve',
-  clave: 'Capitan America',
-  poder: 'Droga'
-}
-
-let {nombre, clave, poder} = avenger;
-//console.log(nombre, clave, poder);
-
-// Destructuracion de Arreglos
-let avengers:string[] = ["Tor", "Steve", "Tony"];
-
-let [tor, capi, ironman] = avengers;
-console.log(tor, capi, ironman);
-
-
-
-//Promesas typescript
-
-let prom1 = new Promise( function(resolve, reject) {
-    setTimeout( ()=>{
-      console.log("Promesa terminada");
-
-      //Si todo sale bien
-      resolve();
-
-      //Si todo sale mal
-      //reject();
-    }, 1500)
-})
-
-//La promesa recibe 2 parametros que son:
-//La funcion que declare primero
-//que en este caso es resolve y luego la
-//segunda funcion que es reject.Ej:
-//prom1.then( funtion(){}, function(){})
-
-prom1.then( function() {
-  console.log("Ejecutarme cuando todo se termine");
-},
-  function(){
-      console.error("Ejecutar si todo sale mal");
-  }
-)
-
-
-//Interfaces typescript
-
-interface Xmen {
-    nombre: string,
-    poder: string,
-}
-
-function enviarMision(xmen:Xmen) {
-    console.log(`Enviando a mision a:  ${xmen.nombre}`);
-}
-
-function enviarCuartel(xmen:Xmen) {
-    console.log(`Enviando al cuartel:  ${xmen.nombre}`);
-}
-
-let wolverine:Xmen = {
-  nombre: "wolverine",
-  poder: "Regeneracion"
+// Uso de Let y Const
+var nombre = "Ricardo Tapia";
+var edad = 23;
+var PERSONAJE = {
+    nombre: nombre,
+    edad: edad
 };
-
-enviarMision(wolverine);
-enviarCuartel(wolverine);
-*/ 
+function enviarMision(superheroe) {
+    console.log("Enviando a mision a:  " + superheroe.nombre);
+}
+var batman = {
+    nombre: "Bruno Díaz",
+    artesMarciales: ["Karate", "Aikido", "Wing Chun", "Jiu-Jitsu"]
+};
+enviarMision(batman);
+// Convertir esta funcion a una funcion de flecha
+function resultadoDoble(a, b) {
+    return (a + b) * 2;
+}
+var mifuncion = function (a, b) { return (a + b) * 2; };
+console.log(mifuncion(2, 4));
+// Función con parametros obligatorios, opcionales y por defecto
+// donde NOMBRE = obligatorio
+//       PODER  = opcional
+//       ARMA   = por defecto = "arco"
+function getAvenger(nombre, poder, arma) {
+    if (arma === void 0) { arma = "arco"; }
+    var mensaje;
+    if (poder) {
+        mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
+    }
+    else {
+        mensaje = nombre + " tiene un  " + arma;
+    }
+    console.log(mensaje);
+}
+;
+getAvenger('Tor', 'Fuerza', 'martillo');
+// Cree una clase que permita manejar la siguiente estructura
+// La clase se debe de llamar rectangulo,
+// debe de tener dos propiedades:
+//   * base
+//   * altura
+// También un método que calcule el área  =  base * altura,
+// ese método debe de retornar un numero.
+var Rectangulo = /** @class */ (function () {
+    function Rectangulo() {
+    }
+    Rectangulo.prototype.calcArea = function () {
+        return this.base * this.altura;
+    };
+    return Rectangulo;
+}());
+var calc = new Rectangulo();
+calc.altura = 10;
+calc.base = 2;
+console.log(calc.calcArea());
