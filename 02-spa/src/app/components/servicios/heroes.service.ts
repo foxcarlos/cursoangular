@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HeroesComponent } from '../heroes/heroes.component';
 
 @Injectable()
 export class HeroesService {
-    private heroes: any[] = [
+
+    private heroes: Heroe[] = [
         {
           nombre: 'Aquaman',
           // tslint:disable-next-line:max-line-length
@@ -68,4 +70,12 @@ export class HeroesService {
     getHeroes() {
         return this.heroes;
     }
+}
+
+export interface Heroe {
+    nombre: string;
+    bio: string;
+    img: string;
+    aparicion: string;
+    casa: string;
 }
