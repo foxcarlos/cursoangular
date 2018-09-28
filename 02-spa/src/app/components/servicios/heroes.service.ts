@@ -79,7 +79,7 @@ export class HeroesService {
           heroesArr.push( heroe);
         }
       }
-      return heroesArr
+      return heroesArr;
     }
 
     getHeroe( idx: string) {
