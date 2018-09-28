@@ -42,8 +42,11 @@ body {
 }
 
 .navbar-fudzy {
-    height: 90px;
     color: lightYellow;
     background-color: #ff3600;
     background-image: linear-gradient(#FF6E5B, #ff3600);
+}
+
+.input-search {
+    width: 200px;
 }
