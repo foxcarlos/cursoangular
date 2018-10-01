@@ -72,9 +72,11 @@ export class HeroesService {
     }
 
     buscarHeroes( termino: string): Heroe[] {
+
       let heroesArr: Heroe[] = [];
       termino = termino.toLowerCase();
-      for (let heroe of heroesArr) {
+
+      for (let heroe of this.heroes) {
         if (heroe.nombre.toLowerCase().indexOf( termino ) >= 0 ) {
           heroesArr.push( heroe);
         }
