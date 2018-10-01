@@ -1,5 +1,12 @@
 <h1>Buscando <small>{{termino}}</small></h1>
 <hr>
+<div *ngIf="heroeBuscar.length <= 0" class="row animated fadeIn fast">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el ternino {{ termino}}
+        </div>
+    </div>
+</div>
 
 <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let heroe of heroeBuscar; let i=index">
