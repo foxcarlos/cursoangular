@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from '../servicios/heroes.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscar',
@@ -12,7 +12,8 @@ import { HeroesService } from '../servicios/heroes.service';
   termino: string;
 
     constructor( private _activateRoute: ActivatedRoute,
-               private _heroesService: HeroesService) {
+               private _heroesService: HeroesService,
+               private _router: Router) {
 
                }
 
@@ -24,5 +25,4 @@ import { HeroesService } from '../servicios/heroes.service';
       console.log(this.heroeBuscar);
       });
   }
-
 }
