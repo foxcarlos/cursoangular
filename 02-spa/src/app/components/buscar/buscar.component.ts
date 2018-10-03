@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
   ngOnInit() {
 
     this._activateRoute.params.subscribe( params => {
-      this.termino = params['termino']
+      this.termino = params['termino'];
       this.heroeBuscar = this._heroesService.buscarHeroes(params['termino']);
       console.log(this.heroeBuscar);
       });
