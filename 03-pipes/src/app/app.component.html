@@ -36,16 +36,35 @@
                 <td>slice de arreglo: 3</td>
                 <td>{{arreglo | slice: 0:3}}</td>
             </tr>
+
+            <tr>
+                <td>{{PI}}</td>
+                <td>number</td>
+                <td>{{PI | number}}</td>
+            </tr>
+
+            <tr>
+                <td>{{PI}}</td>
+                <td>number :'3.0-0'</td>
+                <td>{{PI | number:'3.0-0'}}</td>
+            </tr>
+
+            <tr>
+                <td>{{PI}}</td>
+                <td>number :'1.0-2'</td>
+                <td>{{PI | number:'1.0-2'}}</td>
+            </tr>
+
         </tbody>
     </table>
-    <h4>Slice</h4>
+    <h4>Arreglo</h4>
     <ul>
         <li *ngFor="let item of arreglo">
             {{item}}
         </li>
     </ul>
 
-    <h4>Slice 2</h4>
+    <h4>Arreglo Slice</h4>
     <ul>
         <li *ngFor="let item of arreglo | slice: 5:20">
             {{item}}
