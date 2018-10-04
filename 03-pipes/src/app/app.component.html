@@ -66,6 +66,35 @@
                 <td>percent percent:'2.2-2'</td>
                 <td>{{a | percent:'2.2-2'}}</td>
             </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>salario</td>
+                <td>{{salario | currency}}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>salario currency:'ARS'</td>
+                <td>{{salario | currency:'ARS'}}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>salario con simbolo currency:'EUR':true</td>
+                <td>{{salario | currency:'EUR':true}}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>salario con simbolo currency y numero de decimales:'EUR':true</td>
+                <td>{{salario | currency:'ARS':true:'4.0-0'}}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>Salario sin simbolo y con 2 decimales | number:'.2-2'</td>
+                <td>{{salario | number:'.2-2'}}</td>
+            </tr>
 
         </tbody>
     </table>
