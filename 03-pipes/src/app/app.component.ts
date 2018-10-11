@@ -30,4 +30,6 @@ export class AppComponent {
 
   fecha = new Date();
   video = 'FX_cfTWBk4w';
+  una_contrasena = 'miclave';
+  activar = true;
 }

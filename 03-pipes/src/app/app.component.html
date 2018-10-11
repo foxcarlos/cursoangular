@@ -120,6 +120,19 @@
                 <td>{{ nombre2 | capitalizado:'arguemtno pasado' }}</td>
             </tr>
 
+            <tr>
+                <td>{{ una_contrasena }}</td>
+                <td>
+                    Contraseña: {{activar}}
+                    <br>
+                    <button class="btn btn-outline-danger" type="button" (click)="activar = !activar">
+                        Activar/Desactivar
+                    </button>
+                </td>
+                <td>{{ una_contrasena | contrasena:activar}}</td>
+
+            </tr>
+
 
 
         </tbody>
