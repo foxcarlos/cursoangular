@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
     console.log('Contructor del home hecho');
     this.spotify.getNewReleases()
       .subscribe( (data: any) => {
-        console.log( data.albums.items );
-        this.nuevasCanciones = data.albums.items;
+        console.log( data );
+        this.nuevasCanciones = data;
       });
    }
    ngOnInit() {
