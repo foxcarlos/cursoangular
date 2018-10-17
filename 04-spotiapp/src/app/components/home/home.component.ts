@@ -11,17 +11,16 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
-  paises: any[] = [];
+  nuevasCanciones: any[] = [];
 
-  constructor(private spotify: SpotifyService, private http: HttpClient) {
+  constructor(private spotify: SpotifyService, ) {
     console.log('Contructor del home hecho');
-    /* this.http.get('https://restcountries.eu/rest/v2/lang/es')
-      .subscribe((resp: any) => {
-        this.paises = resp;
-        console.log(this.paises);
-      }); */
-
-      this.spotify.getNewReleases();
-
+    this.spotify.getNewReleases()
+      .subscribe( (data: any) => {
+        console.log( data.albums.items );
+        this.nuevasCanciones = data.albums.items;
+      });
    }
+   ngOnInit() {
+  }
 }

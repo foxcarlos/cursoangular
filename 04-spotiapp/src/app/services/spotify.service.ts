@@ -12,13 +12,18 @@ export class SpotifyService {
 
    getNewReleases() {
      const headers = new HttpHeaders({
-       'Authorization': 'Bearer BQDnj9ocDfsk-mQujOUnYCb2dgQrcz1ljIIQCPZ7chfJ7pZUSdsENk5GWkm5nU-r5qj0-hrQ0oeoxMVMKRM'
+       'Authorization': 'Bearer BQD7OGuqcEs6Ft8E4wVqXjf5z_wOaY1qDJHZmSnhluB3EgYNRb7GesD0K1ZgkMSuFu_EgcT0pLV9gsRcxt1EpkNICLNEhKJlAD7Ji6lXSfJuHQd6p7kZQjrPLc0XUnno5BKiNARDTQDw0JvH'
      });
 
-     this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers})
-       .subscribe( data => {
-         console.log(data);
-       });
+     return this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers});
 
+   }
+
+   getArtista(termino: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQD7OGuqcEs6Ft8E4wVqXjf5z_wOaY1qDJHZmSnhluB3EgYNRb7GesD0K1ZgkMSuFu_EgcT0pLV9gsRcxt1EpkNICLNEhKJlAD7Ji6lXSfJuHQd6p7kZQjrPLc0XUnno5BKiNARDTQDw0JvH'
+    });
+
+    return this.http.get(`https://api.spotify.com/v1/search?query=${ termino }&type=artist&market=AR&offset=0&limit=15`, {headers});
    }
 }
