@@ -1,0 +1,25 @@
+<ion-header text-center>
+    <ion-navbar color="danger">
+        <ion-title>Pendientes</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <img src="../../assets/imgs/pendientes.jpg" alt="">
+
+    <ion-list>
+
+        <button ion-item *ngFor="let lista of deseosProvider.listas" (click)="listaSeleciconada(lista)">
+          {{ lista.titulo }}
+        </button>
+
+    </ion-list>
+
+    <ion-fab bottom right>
+        <button (click)="agregar_lista()" ion-fab>
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+    {{borrar.nombre}}
+
+</ion-content>
