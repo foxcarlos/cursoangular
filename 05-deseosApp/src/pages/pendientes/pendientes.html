@@ -9,9 +9,23 @@
 
     <ion-list>
 
-        <button ion-item *ngFor="let lista of deseosProvider.listas" (click)="listaSeleciconada(lista)">
-          {{ lista.titulo }}
-        </button>
+        <ion-item-sliding *ngFor="let lista of deseosProvider.listas">
+
+            <button ion-item (click)="listaSeleciconada(lista)">
+                {{ lista.titulo }}
+                
+                <ion-badge item-end>
+                    {{lista.items.length}} items
+                </ion-badge>
+            </button>
+
+            <ion-item-options side="left">
+                <button (click)="borrarLista(lista)" ion-button icon-only color="danger2">
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+
+        </ion-item-sliding>
 
     </ion-list>
 

@@ -23,8 +23,17 @@ export class PendientesPage {
   listaSeleciconada( lista: Lista){
     console.log(lista);
     
+    this.navCtrl.push(AgregarPage, {
+      titulo: lista.titulo,
+      lista: lista
+    });
+    
   }
 
+  borrarLista(lista: Lista){
+    this.deseosProvider.borrarLista(lista);
+  }
+  
   agregar_lista(){
 
     // this.navCtrl.push(AgregarPage);
@@ -58,5 +67,7 @@ export class PendientesPage {
 
     alerta.present();
   }
+
+  
 
 }

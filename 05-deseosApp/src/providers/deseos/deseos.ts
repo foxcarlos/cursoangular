@@ -1,37 +1,52 @@
 import { Injectable } from '@angular/core';
 import { Lista } from '../../models/lista.model';
 
-// Plugins
-import { HTTP } from '@ionic-native/http';
 
 @Injectable()
 export class DeseosProvider {
 
   listas: Lista[] = [];
-  constructor(private http: HTTP) {
+  constructor() {
+
+    this.cargarStorage();
     
-    const lista1 = new Lista('Recolectar piedras del infinito');
+    /*const lista1 = new Lista('Recolectar piedras del infinito');
     const lista2 = new Lista('Heroes a vencer');
 
     this.listas.push(lista1, lista2);
-    console.log(this.listas);
+    console.log(this.listas);*/
     
   }
 
-  getHttp(){
-    this.http.get('ec2-18-236-66-28.us-west-2.compute.amazonaws.com:8069/intranet/car9796220', {}, {})
-      .then(data => {
+  borrarLista(lista: Lista){
+    // realmente no se borra, solo se excluye la lista pasada y guardando de nuevo la lista menos esa que pase
 
-        console.log(data.status);
-        console.log(data.data); // data received by server
-        console.log(data.headers);
-      })
-    .catch(error => {
-        console.log(error.status);
-        console.log(error.error); // error message as string
-        console.log(error.headers);
+    this.listas = this.listas.filter( listaData => {
+      return listaData.id != lista.id
+    });
+
+    this.guardarStorage();
+
+  }
+
+  agregarLista( lista: Lista) {
+    this.listas.push( lista )
+    this.guardarStorage();
+  }
+
+  guardarStorage() {
+    localStorage.setItem( 'data', JSON.stringify(this.listas) );
+
+  }
+
+  cargarStorage() {
+    let dataLocalStorage = localStorage.getItem('data');
+
+    if( dataLocalStorage ){
+      this.listas = JSON.parse( dataLocalStorage );
+    }
     
-      });
+
   }
 
 }
