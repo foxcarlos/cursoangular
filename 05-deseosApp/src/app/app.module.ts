@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PendientesPage } from '../pages/pendientes/pendientes';
 import { TerminadosPage } from '../pages/terminados/terminados';
 import { AgregarPage } from '../pages/agregar/agregar';
+import { ListasComponent } from '../components/listas.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +18,8 @@ import { DeseosProvider } from '../providers/deseos/deseos';
 
 // Plugins
 import { HTTP } from '@ionic-native/http';
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { HTTP } from '@ionic-native/http';
     TabsPage,
     PendientesPage,
     TerminadosPage,
-    AgregarPage
+    AgregarPage,
+    ListasComponent,
+    FiltroCompletadoPipe
   ],
   imports: [
     BrowserModule,
