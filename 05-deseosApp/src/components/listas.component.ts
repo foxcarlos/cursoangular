@@ -33,6 +33,33 @@ export class ListasComponent {
 
   editarLista(lista: Lista){
     console.log(lista.titulo);
+    const alerta = this.alertCtrl.create({
+      title: 'Editar nombre',
+      message: 'Editar el nombre de la lista',
+      inputs: [{
+        name: 'titulo',
+        placeholder: 'Nuevo nombre',
+        value: lista.titulo
+      }],
+      buttons: [{
+        text: 'Cancelar',
+        handler: data=>{
+          console.log('Se cancelo la edicion');
+        }
+      },{
+        text: 'Guardar',
+        handler: data=>{
+          if (!data.titulo) {
+            console.log('No se indico ningun nombre a la lista');
+            return;
+          }
+          console.log(data.titulo);
+          lista.titulo = data.titulo;
+          this.deseosProvider.guardarStorage();
+        }
+      }]
+    });
+    alerta.present();
     
   }
 }
